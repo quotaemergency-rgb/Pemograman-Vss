@@ -1,0 +1,1018 @@
+
+/* =========================
+   1. PENGATURAN DASAR
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #101010;
+    color: #f5f5f5;
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+:root {
+    --background: #101010;
+    --surface: #191919;
+    --gold: #d4af37;
+    --text: #f5f5f5;
+    --muted: #b8b8b8;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   2. HEADER DAN NAVIGASI
+========================= */
+
+.header {
+    background-color: #101010;
+    border-bottom: 1px solid #333;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    min-height: 85px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+.logo {
+    color: var(--gold);
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--text);
+}
+
+.logo small {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 5px;
+    margin-top: 5px;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.navigation a {
+    color: var(--muted);
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.navigation a:hover {
+    color: var(--gold);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   3. BERANDA UTAMA
+========================= */
+
+.hero {
+    min-height: 570px;
+    display: flex;
+    align-items: center;
+    background:
+        radial-gradient(
+            ellipse at 80% 40%,
+            #3b3015 0%,
+            #191710 30%,
+            #101010 70%
+        );
+}
+
+.hero-content {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.15;
+    max-width: 850px;
+    margin-bottom: 25px;
+}
+
+.hero-description {
+    color: var(--muted);
+    font-size: 17px;
+    max-width: 620px;
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+
+
+
+
+
+
+
+
+/* =========================
+   4. TOMBOL
+========================= */
+
+.btn {
+    display: inline-block;
+    padding: 13px 25px;
+    border: 1px solid var(--gold);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    transition:
+        background-color 0.3s,
+        color 0.3s,
+        transform 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background-color: var(--gold);
+    color: #111;
+}
+
+.btn-primary:hover {
+    background-color: #f0ce5c;
+}
+
+.btn-outline {
+    color: var(--gold);
+    background-color: transparent;
+}
+
+.btn-outline:hover {
+    background-color: var(--gold);
+    color: #111;
+}
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   5. BAGIAN KONTEN
+========================= */
+
+.section {
+    padding: 85px 0;
+    background-color: var(--background);
+}
+
+.section h2 {
+    font-size: clamp(28px, 4vw, 38px);
+    margin-bottom: 20px;
+}
+
+.section p:not(.eyebrow) {
+    color: var(--muted);
+    max-width: 750px;
+}
+
+.section-alt {
+    background-color: var(--surface);
+}
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   6. FOOTER
+========================= */
+
+.footer {
+    background-color: #090909;
+    border-top: 1px solid #333;
+    padding: 25px 0;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   7. TAMPILAN PONSEL
+========================= */
+
+@media (max-width: 850px) {
+    .navbar {
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .navigation {
+        justify-content: center;
+        gap: 12px 18px;
+    }
+
+    .hero {
+        min-height: 480px;
+    }
+
+    .hero-content {
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+
+    .section {
+        padding: 65px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .navigation a {
+        font-size: 12px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+/* TES PEMUTAR AUDIO */
+#background-music {
+    display: block !important;
+    width: 300px;
+    height: 40px;
+    margin: 20px auto;
+    position: relative;
+    z-index: 9999;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   PENYEMPURNAAN DESAIN
+========================= */
+
+/* Transisi agar perubahan tampilan lebih halus */
+a,
+button {
+    transition: all 0.3s ease;
+}
+
+/* Efek hover pada tombol dan tautan */
+button:hover,
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+/* Warna aksen emas untuk teks yang disorot */
+.highlight {
+    color: #d4af37;
+}
+
+/* Tampilan scrollbar */
+html {
+    scrollbar-color: #d4af37 #101010;
+    scrollbar-width: thin;
+}
+
+/* Memastikan gambar tidak melampaui wadah */
+img {
+    max-width: 100%;
+}
+
+/* Tampilan saat layar berukuran kecil */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+
+
+
+/* FOTO BERANDA */
+.hero .container.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+.hero-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.hero-image {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid var(--gold);
+}
+
+.hero-image img {
+    display: block;
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Tampilan ponsel */
+@media (max-width: 850px) {
+    .hero .container.hero-content {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-image img {
+        height: 280px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   BLUR FOTO DAN LOGO WATERMARK
+========================= */
+
+.hero-image {
+    position: relative;
+}
+
+.hero-image .hero-photo {
+    filter: blur(2px) brightness(0.65);
+}
+
+.hero-image .hero-watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 280px;
+max-width: 70%;
+    height: auto;
+    object-fit: contain;
+
+    opacity: 0.5;
+    z-index: 2;
+    filter: none;
+    border: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   EFEK HOVER TOMBOL EMAS
+========================= */
+
+.btn-primary {
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #d4af37;
+    color: #101010;
+    box-shadow: 0 0 18px rgba(212, 175, 55, 0.5);
+    transform: translateY(-3px);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   ANIMASI BERANDA
+========================= */
+
+@keyframes munculHalus {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-text {
+    animation: munculHalus 0.8s ease-out both;
+}
+
+.hero-image {
+    animation: munculHalus 1s ease-out both;
+}
+
+
+
+
+/* =========================
+   NAVBAR STICKY
+========================= */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(16, 16, 16, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   ANIMASI DAN JARAK SECTION
+========================= */
+
+section {
+    scroll-margin-top: 90px;
+}
+
+section:not(.hero) {
+    position: relative;
+}
+
+section:not(.hero) h2 {
+    text-decoration: underline;
+    text-decoration-color: #d4af37;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 10px;
+}
+
+
+
+
+
+/* =========================
+   FOOTER HITAM EMAS
+========================= */
+
+.footer {
+    background: #0a0a0a;
+    border-top: 2px solid #d4af37;
+    padding: 35px 20px 20px;
+    text-align: center;
+}
+
+.footer-title {
+    color: #d4af37;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.footer-description {
+    color: #bdbdbd;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 22px;
+}
+
+.footer-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(212, 175, 55, 0.3);
+    margin-bottom: 18px;
+}
+
+.footer-copyright {
+    color: #888;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+
+
+
+/* =========================
+   EFEK INTERAKTIF TOMBOL
+========================= */
+
+.btn {
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn-primary:hover {
+    background-color: #f0ce5c;
+    color: #101010;
+    box-shadow: 0 0 18px rgba(212, 175, 55, 0.5);
+}
+
+.btn-outline:hover {
+    background-color: #d4af37;
+    color: #101010;
+    border-color: #d4af37;
+}
+
+
+
+
+
+/* =========================
+   TAMPILAN SALAM ARAB
+========================= */
+
+.salam-arab {
+    font-size: 28px;
+    margin-left: 40px;
+    line-height: 1.8;
+    direction: rtl;
+    text-align: left;
+}
+
+
+
+
+
+
+
+
+
+/* =========================
+   DESAIN TESTIMONI PELANGGAN
+========================= */
+
+#testimoni .container {
+    text-align: center;
+}
+
+.testimoni-card {
+    max-width: 650px;
+    margin: 30px auto 0;
+    padding: 30px;
+    background: #191919;
+    border: 1px solid rgba(212, 175, 55, 0.45);
+    border-radius: 14px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimoni-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(212, 175, 55, 0.12);
+}
+
+.testimoni-card p {
+    color: #b8b8b8;
+    line-height: 1.8;
+    margin: 0;
+}
+
+
+
+
+/* =========================
+   SLIDESHOW TESTIMONI TANPA BINGKAI
+========================= */
+
+.testimoni-slider {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    margin: 30px auto 0;
+    padding-bottom: 40px;
+    background: transparent;
+}
+
+.testimoni-slides {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+}
+
+.testimoni-slide {
+    display: none;
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    background: transparent;
+}
+
+.testimoni-slide.active {
+    display: block;
+    animation: slideMasukKanan 0.45s ease both;
+}
+
+.testimoni-slide.active.dari-kiri {
+    animation: slideMasukKiri 0.45s ease both;
+}
+
+/* FOTO TESTIMONI TANPA BINGKAI */
+.testimoni-slide > img {
+    display: block;
+    width: 100%;
+    height: 420px;
+    padding: 0;
+    margin: 0 auto;
+    object-fit: contain;
+    object-position: center;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* TOMBOL PANAH */
+.testimoni-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 1px solid #d4af37;
+    border-radius: 50%;
+    background: rgba(16, 16, 16, 0.85);
+    color: #d4af37;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.testimoni-nav:hover {
+    background: #d4af37;
+    color: #101010;
+}
+
+.testimoni-nav.prev {
+    left: 0;
+}
+
+.testimoni-nav.next {
+    right: 0;
+}
+
+/* TITIK NAVIGASI */
+.testimoni-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.testimoni-dot {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: #777;
+    cursor: pointer;
+}
+
+.testimoni-dot.active {
+    background: #d4af37;
+    transform: scale(1.2);
+}
+
+/* ANIMASI MASUK DARI KANAN */
+@keyframes slideMasukKanan {
+    from {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ANIMASI MASUK DARI KIRI */
+@keyframes slideMasukKiri {
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* TAMPILAN PONSEL */
+@media (max-width: 600px) {
+    .testimoni-slider {
+        max-width: 100%;
+    }
+
+    .testimoni-slide > img {
+        height: 300px;
+    }
+
+    .testimoni-nav {
+        width: 34px;
+        height: 34px;
+        font-size: 16px;
+    }
+}
+
+
+
+
+/* =========================
+   LAYOUT TESTIMONI KIRI-KANAN
+========================= */
+
+#testimoni .testimoni-layout {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    align-items: center;
+    gap: 50px;
+}
+
+/* TEKS DI SEBELAH KIRI */
+#testimoni .testimoni-text {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: stretch;
+}
+
+#testimoni .testimoni-text h2 {
+    margin-bottom: 20px;
+}
+
+#testimoni .testimoni-text > p:not(.eyebrow) {
+    max-width: 440px;
+    margin-bottom: 25px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+/* FOTO DI SEBELAH KANAN */
+#testimoni .testimoni-slider {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+}
+
+/* RESPONSIF UNTUK PONSEL */
+@media (max-width: 768px) {
+    #testimoni .testimoni-layout {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    #testimoni .testimoni-text {
+        text-align: left;
+    }
+
+    #testimoni .testimoni-text > p:not(.eyebrow) {
+        max-width: 100%;
+    }
+
+    #testimoni .testimoni-slider {
+        width: 100%;
+    }
+
+    #testimoni .testimoni-slide > img {
+        height: 300px;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* =========================
+   SLIDE PANEL NAVIGASI
+========================= */
+
+.slide-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+    z-index: 9998;
+}
+
+.slide-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: min(520px, 90%);
+    height: 100vh;
+    padding: 70px 35px 35px;
+    overflow-y: auto;
+    background: #101010;
+    color: #f5f5f5;
+    border-left: 1px solid #d4af37;
+    transform: translateX(100%);
+    transition: transform 0.4s ease;
+    z-index: 9999;
+}
+
+.slide-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.slide-panel.open {
+    transform: translateX(0);
+}
+
+.slide-close {
+    position: absolute;
+    top: 18px;
+    right: 24px;
+    border: none;
+    background: transparent;
+    color: #d4af37;
+    font-size: 36px;
+    cursor: pointer;
+}
+
+.slide-panel-content h2 {
+    color: #d4af37;
+    margin-bottom: 20px;
+}
+
+.slide-panel-content p {
+    color: #ccc;
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.slide-panel-content a {
+    color: #d4af37;
+}
+
+body.panel-open {
+    overflow: hidden;
+}
